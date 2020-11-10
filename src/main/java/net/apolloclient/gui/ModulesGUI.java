@@ -25,6 +25,9 @@ import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.util.ResourceLocation;
 import org.newdawn.slick.opengl.renderer.Renderer;
 
+/**
+ * @author BossCode and icovid (i think)
+ */
 public class ModulesGUI extends GuiScreen {
 
     private static final ResourceLocation modules_resource = new ResourceLocation("modules.png");
@@ -59,6 +62,10 @@ public class ModulesGUI extends GuiScreen {
         drawScaledCustomSizeModalRect((this.width / 2) + (this.height * 449 / 1385), y_position + (this.height * 31 / 1385),
                                       930, 0, 297, 84,
                                       (this.height * 199 / 1385), (this.height * 57 / 1385), 1385, 1457);
+
+        /**
+         * @author BossCode
+         */
 
         //draw rect for item physics status
         int statusX = 185;

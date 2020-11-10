@@ -4,13 +4,19 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.entity.RenderEntityItem;
 import net.minecraft.util.ResourceLocation;
 
 import java.io.File;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
 
+/**
+ * @author BossCode45
+ * @see GuiButton
+ */
 public class ToggleItemPhysicsGuiButton extends GuiButton {
+    //buttonTextures is the texture location for the button texture
     protected static final ResourceLocation buttonTextures = new ResourceLocation("ItemPhysicsButton.png");
     public ToggleItemPhysicsGuiButton(int buttonId, int x, int y, String buttonText) {
         super(buttonId, x, y, buttonText);
@@ -20,6 +26,10 @@ public class ToggleItemPhysicsGuiButton extends GuiButton {
         super(buttonId, x, y, widthIn, heightIn, buttonText);
     }
 
+    /**
+     * @see GuiButton#drawButton(Minecraft, int, int)
+     * this is an override of it with a few changes to make it have a custom texture
+     */
     @Override
     public void drawButton(Minecraft mc, int mouseX, int mouseY)
     {
@@ -34,7 +44,6 @@ public class ToggleItemPhysicsGuiButton extends GuiButton {
             GlStateManager.tryBlendFuncSeparate(770, 771, 1, 0);
             GlStateManager.blendFunc(770, 771);
             this.drawModalRectWithCustomSizedTexture(this.xPosition, this.yPosition, 0, 0, this.width , this.height, this.width, this.height);
-            //this.drawTexturedModalRect(this.xPosition + this.width / 2, this.yPosition, 0, 0, this.width, this.height);
             this.mouseDragged(mc, mouseX, mouseY);
             int j = 14737632;
 
@@ -46,8 +55,6 @@ public class ToggleItemPhysicsGuiButton extends GuiButton {
             {
                 j = 16777120;
             }
-
-            //this.drawCenteredString(fontrenderer, this.displayString, this.xPosition + this.width / 2, this.yPosition + (this.height - 8) / 2, j);
         }
     }
 }
